@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+
+/*shimmer ui*/
+/* Shimmer UI styles */
+.shimmerParent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.shimmerUI {
+  height: 300px;
+  width: 280px;
+  background: #f6f7f8;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmerUI::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #e1e1e1 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 200%;
+  }
+}
+
+
+
+.accordion {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.accordion-header {
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content {
+  padding: 10px 15px;
+  background-color: #fff;
+}
+
+/* After */
+
